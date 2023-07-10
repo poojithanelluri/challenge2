@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Challenge 2</h1>
+    <script>
+        function calculateMaxChocolates(totalMoney, costOfChocolate) {
+  // Calculate the initial number of chocolates Ashi can buy
+  let initialChocolates = Math.floor(totalMoney / costOfChocolate);
+  let wrappers = initialChocolates;
+  
+  // Calculate additional chocolates from wrappers
+  while (wrappers >= 3) {
+    const additionalChocolates = Math.floor(wrappers / 3);
+    initialChocolates += additionalChocolates;
+    wrappers = wrappers % 3 + additionalChocolates;
+  }
+  
+  return initialChocolates;
+}
+
+// Example usage
+totalMoney=prompt("enter total money");
+costOfChocolate=prompt("enter total cost of chocolate");
+const maxChocolates = calculateMaxChocolates(totalMoney, costOfChocolate);
+console.log("maximum chocalates aishi can eat with total money "+totalMoney+" when each chocolate cost is "+costOfChocolate+" is: "+maxChocolates); // Output: 10
+
+    </script>
+</body>
+</html>
